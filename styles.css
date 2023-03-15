@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 200px;
+    width: 200px;
+}
+
+/* .book-card {
+    border-style: lined;
+    border-color: red;
+    background-color: aqua;
+    height: 100px;
+    width: 100px;
+} */
