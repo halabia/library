@@ -14,24 +14,29 @@ function Book(title, author, pages, read) {
     }
 }
 
-
 const closeButton = document.createElement("BUTTON");
 const submitButton = document.createElement("BUTTON");
 
 // book input fields for overlay
 var titleInput = document.createElement("INPUT");
+titleInput.classList.add("input-field")
 titleInput.setAttribute("type", "text");
+titleInput.setAttribute("placeholder", "What's the title of the book?");
 
 var authorInput = document.createElement("INPUT");
+authorInput.classList.add("input-field")
 authorInput.setAttribute("type", "text");
+authorInput.setAttribute("placeholder", "What's the author of the book?");
 
 var pagesInput = document.createElement("INPUT");
+pagesInput.classList.add("input-field")
 pagesInput.setAttribute("type", "number");
+pagesInput.setAttribute("placeholder", "How many pages does it have?");
 
 var readInput = document.createElement("INPUT");
+readInput.classList.add("input-field")
 readInput.setAttribute("type", "text");
-
-
+readInput.setAttribute("placeholder", "Have you read this book?");
 
 // create book item on screen
 let createBook = (count) => {
@@ -72,10 +77,6 @@ newBookButton.addEventListener('click', () => {
     overlay.append(pagesInput)
     overlay.append(readInput)
 
-    let title = `${titleInput.value}`
-    let author = `${authorInput.value}`
-    let pages = `${pagesInput.value}`
-    let read = `${readInput.value}`
 
     closeButton.addEventListener('click', () => {
         document.getElementById("overlay").style.display = "none";
@@ -84,15 +85,14 @@ newBookButton.addEventListener('click', () => {
     overlay.append(submitButton)
     submitButton.innerHTML = "SUBMIT"
     submitButton.addEventListener('click', () => {
+        let title = `${titleInput.value}`
+        let author = `${authorInput.value}`
+        let pages = `${pagesInput.value}`
+        let read = `${readInput.value}`
         const newBook = new Book(title, author, pages, read)
         myLibrary.push(newBook)
         createBook(count)
-    count++
+        count++
     })
+
 });
-
-
-    // let title = prompt("What's the name of the book?")
-    // let author = prompt("What's the name of the author?")
-    // let pages = parseInt(prompt("How many pages are in the book?"))
-    // let read = prompt("Have you read the book? Please enter yes or no.")
