@@ -64,3 +64,8 @@
     height: 100px;
     width: 100px;
   }
+
+  .submit-button {
+    background-color: green;
+    color: white;
+  }
